@@ -8,14 +8,8 @@ df.drop(columns=['costat', 'curcdq', 'datafmt', 'indfmt', 'consol', 'conm', 'dat
 
 df = df[df['conml'].notna()]
 df = df[df['tic'].notna()]
-print(df.columns)
-print(df.head())
-
 df2 = pd.read_csv("Raw_data/sector_info.csv")
 df2.drop(columns=['costat', 'curcdq', 'datafmt', 'indfmt', 'consol', 'fyearq', 'gvkey', 'conml', 'idbflag', 'spcseccd'], inplace=True, errors='ignore')
-
-print(df2.columns)
-print(df2.head())
 
 merged = pd.merge(
     df,
@@ -29,8 +23,6 @@ print(merged.head())
 df = merged
 
 df3= pd.read_csv("Raw_data/book_value_with_calculation.csv")
-print(df3.columns)
-
 merged = df.merge(
     df3[["datafqtr", "tic", "book_value"]],
     left_on=["datafqtr", "tic"],
@@ -39,10 +31,6 @@ merged = df.merge(
 )
 
 df = merged
-print(df.columns)
-print(df.head())
-
-
 numeric_cols = ['atq', 'cogsq', 'cshoq', 'ltq', 'revtq', 'saleq', 'prccq']
 
 df['market_cap'] = df['prccq'].abs() * df['cshoq']  # In case price is negative
