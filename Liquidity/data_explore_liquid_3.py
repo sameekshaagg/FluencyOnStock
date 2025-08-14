@@ -5,7 +5,6 @@ df = pd.read_csv('Liquidity/liquidity_data_1.csv')
 df1 = pd.read_csv('Raw_data/company_name_change.csv')
 df1['month_date'] = pd.to_datetime(df1['DATE'], format='%d/%m/%Y').dt.to_period('Q').astype(str)
 df1 = df1[['month_date', 'COMNAM', 'TICKER']]
-print(df1)
 
 merged_df = pd.merge(df, df1, left_on=['datafqtr', 'tic'], right_on=['month_date', 'TICKER'], how='left')
 merged_df = merged_df.rename(columns={"COMNAM": "company_name"})
