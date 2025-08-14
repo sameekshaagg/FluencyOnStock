@@ -1,5 +1,7 @@
 import pandas as pd
 
+#Can switch between merging the Englishness score and the features of company names and words from the frequency list
+
 data = pd.read_csv('Performance/english_company_score_performance.csv')
 data.drop(columns=['Unnamed: 0'], inplace=True)
 
