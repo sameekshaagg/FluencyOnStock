@@ -1,7 +1,7 @@
 import pandas as pd
 
 df = pd.read_csv('valuation_1.csv')
-df1 = pd.read_csv('Valuation/trial_check/valuation_predictions_MAE_nolog_nol1_l2.csv')
+df1 = pd.read_csv('Valuation/trial_check/valuation_predictions_huber_log.csv')
 
 df['conml'] = df['conml'].str.upper()
 df1['original_name'] = df1['original_name'].str.upper()
@@ -34,4 +34,4 @@ print(f"Number of unique 'conml' in merged_df: {unique_conml_count}")
 
 print(merged_df.shape)
 
-merged_df.to_csv('Valuation/trial_check/final_data_valuation_MAE_nolog_nol1_l2.csv', index=False)
+merged_df.to_csv('Valuation/trial_check/final_data_valuation_huber_log.csv', index=False)
