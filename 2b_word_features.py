@@ -129,19 +129,6 @@ def short_name_flag(df):
 
     return pd.DataFrame(flags, columns=['is_short_name'])
 
-#features
-# def sound(df):
-#     soundx = []
-
-#     for name in df[col_name]:
-#         if isinstance(name, str):
-#             word_split = name.split()
-#             soundex_codes = [phonetics.soundex(word) for word in word_split]
-#             soundx.append(' '.join(soundex_codes))
-#         else:
-#             soundx.append(None)
-#     return pd.DataFrame(soundx, columns=['sound'])
-
 def sound(df):
     soundx = []
 
@@ -156,7 +143,6 @@ def sound(df):
             longest_word = max(words, key=len)
             soundex_code = phonetics.soundex(longest_word)
 
-            # Pad/truncate to 4 characters
             padded = (soundex_code + '0000')[:4]
             soundx.append(padded)
         else:
