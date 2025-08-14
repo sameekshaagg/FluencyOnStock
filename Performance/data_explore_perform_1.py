@@ -1,7 +1,7 @@
 import pandas as pd
 
 df = pd.read_csv('Performance/performance_1.csv')
-df1 = pd.read_csv('Performance/trial_check/performance_predictions_MSLE_nolog_nol1_l2.csv')
+df1 = pd.read_csv('Performance/trial_check/performance_predictions_huber_log.csv')
 
 print(df.columns)
 print(df1.columns)
@@ -42,6 +42,6 @@ print(f"Number of unique 'IssuerNm' in merged_df: {unique_conml_count}")
 
 print(merged_df.shape)
 
-merged_df.to_csv('Performance/trial_check/final_data_performance_MSLE_nolog_nol1_l2.csv', index=False)
+merged_df.to_csv('Performance/trial_check/final_data_performance_huber_log.csv', index=False)
 
 
