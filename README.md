@@ -1,31 +1,59 @@
-# Company_name_fluency_score
+# Company Name Fluency Score  
 
-Below, I give a summary of the contents and the most important files 
+This repository contains the code, data preparation scripts, and LaTeX files used in my thesis on **the relationship between company name fluency and firm outcomes** (valuation, liquidity, and performance). The repository is organized into modular folders, each corresponding to a key part of the project.  
 
-## Data_prep folder
-This folder contains the Python file used for converting the raw data into a format that can be used by the neural network. 
-### Data
-You can find the data for Stata using: https://drive.google.com/drive/folders/1QtdJiX9Hw5gCjpyesIs6BrrZW-I_ahN3?usp=sharing
+---
 
-## Neural_network folder
-This folder contains all the files related to the neural network, including the best model and the hyperparameters.
+## Repository Structure  
 
-## Liquidity folder
-This folder contains the Python file needed to create the dataset for Stata and how to join the fluency score and control variable together. It also contains the do file for Stata for the regression. 
+### 📂 Data_prep  
+- Contains the Python scripts used to clean and transform the raw data into a format suitable for the neural network and subsequent regression analysis.  
+- **Data Access**: Due to size constraints, the full dataset is hosted externally and can be downloaded from:  
+  [Google Drive link](https://drive.google.com/drive/folders/1QtdJiX9Hw5gCjpyesIs6BrrZW-I_ahN3?usp=sharing)  
 
-## Valuation folder
-This folder contains the Python file needed to create the dataset for Stata and how to join the fluency score and control variable together. It also contains the do file for Stata for the regression. 
+---
 
-## Performance folder
-This folder contains the Python file needed to create the dataset for Stata and how to join the fluency score and control variable together. It also contains the do file for Stata for the regression. 
+### 📂 Neural_network  
+- Includes all files related to the neural network architecture and training process.  
+- Contains:  
+  - Implementation of different models.  
+  - Best-performing model saved for replication.  
+  - Hyperparameter search results.  
 
-## LaTeX
+---
 
-### figures folder
-Contains the figures that are used in this project.
+### 📂 Liquidity  
+- Python scripts to construct the dataset used for liquidity regressions.  
+- Instructions on how the fluency score is merged with control variables.  
+- Stata `.do` files for running the regression analysis.  
 
-### bibliography.bib
-Bibtex style references to other studies used in this research.
+---
 
-### main.tex
-This file contains the thesis written in LaTeX.
+### 📂 Valuation  
+- Similar to the *Liquidity* folder but focused on firm valuation outcomes.  
+- Contains Python preprocessing scripts and Stata regression files.  
+
+---
+
+### 📂 Performance  
+- Focused on firm performance measures.  
+- Includes Python preprocessing scripts and corresponding Stata `.do` files for regression analysis.  
+
+---
+
+### 📂 LaTeX  
+- Contains all files related to the thesis write-up.  
+- **figures/**: All plots and visualizations used in the thesis.  
+- **bibliography.bib**: BibTeX reference file containing all cited works.  
+- **main.tex**: The LaTeX source file of the thesis.  
+
+---
+
+## Notes  
+- The code is primarily written in **Python (TensorFlow, Keras, Pandas, etc.)** and **Stata**.  
+- Both data preparation and regression steps are included to allow full replication of the results.  
+- The fluency score dataset covers **15,274 companies**, with quarterly stock characteristics collected between **1980–2024**.  
+
+---
+
+👉 This structure allows anyone to reproduce, understand, or extend the analysis with minimal effort.  
